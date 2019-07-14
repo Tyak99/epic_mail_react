@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test async actions creates loginSuccess when login is done 1`] = `
+Array [
+  Object {
+    "type": "AUTH_START",
+  },
+  Object {
+    "data": Object {
+      "name": "Tunde",
+      "token": "secret",
+    },
+    "type": "LOGIN_SUCCESS",
+  },
+]
+`;
+
+exports[`test async actions creates loginSuccess when login is done 2`] = `
+Array [
+  Object {
+    "type": "AUTH_START",
+  },
+  Object {
+    "error": "invalid password",
+    "type": "LOGIN_FAILED",
+  },
+]
+`;
+
+exports[`test async actions should test checkAuth 1`] = `Array []`;
+
+exports[`test authentication actions should call loginFailed when the action is dispatched 1`] = `
+Array [
+  Object {
+    "data": Object {
+      "name": "Tunde",
+      "token": "token",
+    },
+    "type": "LOGIN_SUCCESS",
+  },
+  Object {
+    "error": Object {
+      "error": "sorry",
+    },
+    "type": "LOGIN_FAILED",
+  },
+]
+`;
+
+exports[`test authentication actions should call loginSuccess when the action is dispatched 1`] = `
+Array [
+  Object {
+    "data": Object {
+      "name": "Tunde",
+      "token": "token",
+    },
+    "type": "LOGIN_SUCCESS",
+  },
+]
+`;
+
+exports[`test reducers should update the state when loginFailed is called 1`] = `
+Object {
+  "data": Object {},
+  "error": Object {
+    "error": "invalid password",
+  },
+  "isLoading": false,
+}
+`;
+
+exports[`test reducers should update the state when loginSucces is called 1`] = `
+Object {
+  "data": Object {
+    "name": "Tunde",
+    "token": "token",
+  },
+  "error": null,
+  "isLoading": false,
+}
+`;

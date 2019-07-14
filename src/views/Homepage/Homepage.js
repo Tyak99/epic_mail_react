@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import cx from 'classnames';
 import style from './homepage.css';
+import Login from '../Login/Login';
 
 const Homepage = () => (
   <div className={style.container}>
@@ -18,6 +19,7 @@ const Homepage = () => (
         <button type="button" className={cx(style.btn, style.btnRegister)}>Get Started For Free</button>
       </Link>
     </div>
+    <Login />
     <div className={style.section3}>
       <h1>AN EMAIL APP DESIGNED JUST FOR YOU</h1>
       <p>

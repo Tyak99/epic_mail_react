@@ -1,0 +1,53 @@
+form {
+    max-width: 290px;
+    margin: 0 auto;
+  }
+  
+  .formTitle {
+    font-size: 1.5em;
+    margin-top: 0;
+  }
+  
+  .formGroup {
+    margin: 1rem 0;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .formControl {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+    font-weight: 400;
+    border: 1px solid #ced4da;
+    border-radius: 0.25em;
+  }
+  
+  .submitBtn {
+    font-size: large;
+    padding: 12px 32px;
+    background-color: goldenrod;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  .submitBtn:hover {
+    background-color: rgb(207, 173, 88);
+  }
+  
+  .forgotPassword {
+    margin-bottom: 10px;
+  }
+  .forgotPassword a {
+    text-decoration: none;
+    color: antiquewhite;
+    font-size: medium;
+  }
+  .forgotPassword a:hover {
+    color: maroon;
+  }
+  
