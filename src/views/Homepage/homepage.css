@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+    background: #00b4db; 
+    background: -webkit-linear-gradient(
+      to right,
+      #0083b0,
+      #00b4db
+    );
+    background: linear-gradient(
+      to right,
+      #0083b0,
+      #00b4db
+    ); 
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .header {
+    font-size: 72px;
+    text-align: center;
+    color: black;
+  }
+  .header svg {
+      margin-left: 12px;
+  }
+  .subHeaders {
+    font-size: 60px;
+    color: #efe8e8;
+  }
+  .section {
+    float: left;
+    width: 50%;
+  }
+  .section3 {
+    width: 80%;
+    float: left;
+  }
+  .section3 p {
+    font-size: large;
+  }
+  .btn {
+    padding: 18px 44px;
+    border-radius: 10px;
+    color: white;
+    font-size: larger;
+    cursor: pointer;
+  }
+  
+  .btnRegister {
+    background-color: goldenrod;
+  }
+  
+  @media screen and (max-width: 750px) {
+    .section {
+      width: unset;
+      float: none;
+    }
+    .section .subHeaders {
+      font-size: 50px;
+    }
+    .section2 {
+      float: none;
+      width: 80%;
+    }
+  }
+  
