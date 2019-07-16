@@ -1,0 +1,9 @@
+export const LOGIN = 'Login';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAILED = 'LOGIN_FAILED';
+export const AUTH_START = 'AUTH_START';
+export const GET_INBOX = 'GET_INBOX';
+export const GET_INBOX_SUCCESS = 'GET_INBOX';
+export const GET_MESSAGE_FAILED = 'GET_MESSAGE_FAILED';
+export const GET_SENT_SUCCESS = 'GET_SENT_SUCCESS';
+export const GET_DRAFT_SUCCESS = 'GET_DRAFT_SUCCESS';
