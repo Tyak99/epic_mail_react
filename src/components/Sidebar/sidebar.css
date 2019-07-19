@@ -1,0 +1,39 @@
+.asideSection {
+    width: 20%;
+    float: left;
+    height: 100vh;
+    box-shadow: 0 10px 35px -6px #8c8b8b inset;
+  }
+  
+  .asideSection ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .asideSection li {
+    padding: 10px;
+    margin: 14px 0px;
+    border-radius: 26px;
+  }
+  
+  .asideSection a {
+    text-decoration: none;
+    color: black;
+  }
+
+  @media screen and (max-width: 750px) {
+    .asideSection {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    .asideSection.responsive {
+      position: absolute;
+      width: 39%;
+      display: block;
+      background-color: #f1f1f1;
+  
+    }
+  }
+  
+  
