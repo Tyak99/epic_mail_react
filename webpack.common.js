@@ -34,15 +34,25 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader',
-      },
-      {
-        test: /\.css$/,
-        loader: 'css-loader',
-        query: {
-          modules: true,
-          localIdentName: '[name]__[local]___[hash:base64:5]',
-        },
+        oneOf: [{
+          resourceQuery: /^\?raw$/,
+          use: [
+            require.resolve('style-loader'),
+            require.resolve('css-loader'),
+          ],
+        }, {
+          use: [
+            require.resolve('style-loader'),
+            {
+              loader: require.resolve('css-loader'),
+              options: {
+                importLoaders: 1,
+                modules: true,
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+              },
+            },
+          ],
+        }],
       },
 
     ],

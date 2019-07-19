@@ -1,0 +1,12 @@
+.nav {
+  background-color: #3C91E6;
+  color: white
+}
+
+.nav img {
+  height: 40px;
+  border-radius: 50%;
+}
+.nav a {
+  color: white
+}
