@@ -1,48 +1,27 @@
 import React from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-} from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 import styles from './header.css';
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
+const Header = ({ toggle }) => (
+  <header>
+    <div className={styles.nav} id="myNav">
+      <div style={{ fontSize: '30px' }} className={styles.icon}>
+        <FontAwesomeIcon icon="bars" style={{ color: 'black' }} onClick={toggle} id="icon" />
+      </div>
+      <h2 className={styles.navBrand}>Epic Mail</h2>
+      <img src="https://avatars.io/twitter/tundenasri" alt="profile" />
+      <div className={styles.logout} id="signout">
+        <a>
+          <h4>Sign out</h4>
+        </a>
+      </div>
+    </div>
+  </header>
+);
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false,
-    };
-  }
-
-  toggle() {
-    const { isOpen } = this.state;
-    this.setState({
-      isOpen: !isOpen,
-    });
-  }
-
-  render() {
-    const { isOpen } = this.state;
-    return (
-      <Navbar expand="md" className={styles.nav}>
-        <NavbarBrand href="/">Epic Mail</NavbarBrand>
-        <NavbarToggler onClick={this.toggle} id="navToggler" />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink href="/">Sign out</NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Navbar>
-    );
-  }
-}
+Header.propTypes = {
+  toggle: PropTypes.func.isRequired,
+};
 
 export default Header;

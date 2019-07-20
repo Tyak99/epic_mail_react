@@ -11,12 +11,12 @@ import {
   faThLarge,
   faPlus,
   faPaperPlane,
+  faBars,
 } from '@fortawesome/free-solid-svg-icons';
 import App from './App';
 import store from '../store/index';
-// import 'bootstrap/dist/css/bootstrap.min.css?raw';
 
-library.add(faInbox, faAngleDoubleUp, faBox, faThLarge, faPlus, faPaperPlane);
+library.add(faInbox, faAngleDoubleUp, faBox, faThLarge, faPlus, faPaperPlane, faBars);
 
 render(
   <Provider store={store}>

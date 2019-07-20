@@ -3,6 +3,7 @@
     float: left;
     height: 100vh;
     box-shadow: 0 10px 35px -6px #8c8b8b inset;
+    background-color: #f1f1f1;
   }
   
   .asideSection ul {
@@ -29,7 +30,7 @@
   @media screen and (max-width: 750px) {
     .asideSection.responsive {
       position: absolute;
-      width: 39%;
+      width: 33%;
       display: block;
       background-color: #f1f1f1;
   
