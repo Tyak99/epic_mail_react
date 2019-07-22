@@ -7,6 +7,11 @@ export const getMessageSuccess = data => ({
   data,
 });
 
+export const getSentMessageSuccess = data => ({
+  type: actionTypes.GET_SENT_SUCCESS,
+  data,
+});
+
 export const getMessageFailed = error => ({
   type: actionTypes.GET_MESSAGE_FAILED,
   error,
@@ -21,6 +26,22 @@ export const getInbox = () => {
       })
       .then((res) => {
         dispatch(getMessageSuccess(res.data.data));
+      })
+      .catch((error) => {
+        dispatch(getMessageFailed(error.response.data.error));
+      });
+  };
+};
+
+export const getSentMessages = () => {
+  const url = 'https://intense-thicket-60071.herokuapp.com/api/v1/messages/sent';
+  return (dispatch) => {
+    axios
+      .get(url, {
+        headers: { Authorization: token },
+      })
+      .then((res) => {
+        dispatch(getSentMessageSuccess(res.data.data));
       })
       .catch((error) => {
         dispatch(getMessageFailed(error.response.data.error));

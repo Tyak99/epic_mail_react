@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import NotFound from '../components/NotFound/NotFound';
 import Home from '../views/Homepage/Homepage';
-import Sent from '../views/Sent';
+import Sent from '../views/Sent/Sent';
 import Inbox from '../views/Inbox/Inbox';
 
 const Routes = () => (
