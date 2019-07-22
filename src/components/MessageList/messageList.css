@@ -1,0 +1,49 @@
+.mainSection {
+    float: right;
+    width: 80%;
+    margin-top: 10px;
+  }
+  
+  .mainSection ul {
+    list-style-type: none;
+    height: 80vh;
+    overflow: scroll;
+    padding: 0;
+  }
+  
+  .mainSection li {
+    color: #111;
+    border: 1px solid black;
+    border-left: 0;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  .mainSection li:hover {
+    box-shadow: 10px 3px 5px rgb(211, 173, 103);
+  }
+  .mainSection a {
+    text-decoration: none;
+  }
+  
+  .mainSection li span.sender {
+    color: maroon;
+    padding-right: 30px;
+  }
+  .mainSection li span.body {
+    margin-left: 5px;
+    color: grey;
+  }
+  .mainSection li span.status {
+    padding-left: 50px;
+    font-style: italic;
+    color: grey;
+    text-align: right;
+  }
+  
+  .mainSection .emptyBox {
+    text-align: center;
+    color: grey;
+    margin-top: 31%;
+  }
+  
