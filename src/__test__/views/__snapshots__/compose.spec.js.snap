@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`message reducer should return the initial state 1`] = `
+Object {
+  "error": "",
+  "inbox": Array [],
+  "isLoading": false,
+  "sent": Array [],
+  "status": "",
+}
+`;
+
+exports[`message reducer should update the state on sendMessage failed 1`] = `
+Object {
+  "error": undefined,
+  "inbox": Array [],
+  "isLoading": false,
+  "sent": Array [],
+  "status": "",
+}
+`;
+
+exports[`message reducer should update the state on sendMessage start 1`] = `
+Object {
+  "error": "",
+  "inbox": Array [],
+  "isLoading": true,
+  "sent": Array [],
+  "status": "",
+}
+`;
+
+exports[`message reducer should update the state on sendMessage success 1`] = `
+Object {
+  "error": "",
+  "inbox": Array [],
+  "isLoading": false,
+  "sent": Array [],
+  "status": undefined,
+}
+`;
+
+exports[`send message actions dispatches send message faled when message fails 1`] = `
+Array [
+  Object {
+    "message": "Sent successfully",
+    "type": "SEND_MESSAGE_SUCCESS",
+  },
+  Object {
+    "error": "Invalid email",
+    "type": "SEND_MESSAGE_FAILED",
+  },
+]
+`;
+
+exports[`send message actions dispatches send message success when message sent 1`] = `
+Array [
+  Object {
+    "message": "Sent successfully",
+    "type": "SEND_MESSAGE_SUCCESS",
+  },
+]
+`;
+
+exports[`send message async actions calls send message failed 1`] = `
+Array [
+  Object {
+    "type": "SEND_MESSAGE_START",
+  },
+  Object {
+    "error": undefined,
+    "type": "SEND_MESSAGE_FAILED",
+  },
+]
+`;
+
+exports[`send message async actions sends message successfully 1`] = `
+Array [
+  Object {
+    "type": "SEND_MESSAGE_START",
+  },
+  Object {
+    "message": "Sent successfully",
+    "type": "SEND_MESSAGE_SUCCESS",
+  },
+]
+`;

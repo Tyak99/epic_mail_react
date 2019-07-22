@@ -23,7 +23,7 @@ export class Inbox extends Component {
 }
 
 Inbox.propTypes = {
-  messages: PropTypes.array.isRequired,
+  messages: PropTypes.arrayOf(PropTypes.object).isRequired,
   getInbox: PropTypes.func.isRequired,
 };
 const mapStateToProps = state => ({

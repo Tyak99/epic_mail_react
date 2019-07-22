@@ -26,6 +26,7 @@ export const login = (email, password) => {
       .post(url, authData)
       .then((response) => {
         const { token } = response.data.data;
+        localStorage.removeItem('token');
         localStorage.setItem('token', token);
         dispatch(loginSuccess(response.data.data));
       })

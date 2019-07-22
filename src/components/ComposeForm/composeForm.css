@@ -1,0 +1,55 @@
+.section {
+    float: right;
+    width: 80%;
+    text-align: center;
+  }
+  .section form {
+    max-width: 600px;
+    padding: 30px;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+  }
+  
+  .section input[type='text'],
+  .section input[type='email'] {
+    padding: 9px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    font-size: unset;
+    width: 80%;
+    font-weight: 500;
+  }
+  .section input[type='email'] {
+    background-color: aliceblue;
+    font-weight: 400;
+    font-size: 13px;
+    font-style: italic;
+  }
+  .section textarea {
+    height: 220px;
+    width: 80%;
+    border: 1px solid cadetblue;
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  .btn {
+    padding: 12px 22px;
+    color: white;
+    background-color: dodgerblue;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .btnDraft {
+    background-color: cadetblue;
+    margin-right: 12px;
+  }
+  
+  .btn:hover {
+    background-color: #0e79d1;
+  }
+  .btn-draft:hover {
+    background-color: #a4ced0;
+  }
+  
