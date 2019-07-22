@@ -17,6 +17,11 @@ export const getMessageFailed = error => ({
   error,
 });
 
+export const getDraftMessageSuccess = data => ({
+  type: actionTypes.GET_DRAFT_SUCCESS,
+  data,
+});
+
 export const getInbox = () => {
   const url = 'https://intense-thicket-60071.herokuapp.com/api/v1/messages';
   return (dispatch) => {
@@ -42,6 +47,23 @@ export const getSentMessages = () => {
       })
       .then((res) => {
         dispatch(getSentMessageSuccess(res.data.data));
+      })
+      .catch((error) => {
+        dispatch(getMessageFailed(error.response.data.error));
+      });
+  };
+};
+
+export const getDraftMessages = () => {
+  const url = 'https://intense-thicket-60071.herokuapp.com/api/v1/messages/draft';
+  return (dispatch) => {
+    axios
+      .get(url, {
+        headers: { Authorization: token },
+      })
+      .then((res) => {
+        console.log('TCL: getDraftMessages -> res', res);
+        dispatch(getDraftMessageSuccess(res.data.data));
       })
       .catch((error) => {
         dispatch(getMessageFailed(error.response.data.error));

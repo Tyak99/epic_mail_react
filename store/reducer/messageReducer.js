@@ -3,6 +3,7 @@ import * as actionTypes from '../actionConstants';
 const initialState = {
   inbox: [],
   sent: [],
+  drafts: [],
   error: '',
 };
 export default (state = initialState, action) => {
@@ -21,6 +22,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         sent: action.data,
+      };
+    case actionTypes.GET_DRAFT_SUCCESS:
+      return {
+        ...state,
+        drafts: action.data,
       };
     default:
       return state;

@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Navigation from '../../components/Navigation/Navigation';
-
 import MessageList from '../../components/MessageList/MessageList';
 import { getSentMessages as getMessage } from '../../../store/actions/messageAction';
 
