@@ -5,6 +5,7 @@ import Home from '../views/Homepage/Homepage';
 import Sent from '../views/Sent/Sent';
 import Inbox from '../views/Inbox/Inbox';
 import Compose from '../views/Compose/Compose';
+import Register from '../views/Register/Register';
 
 const Routes = () => (
 
@@ -13,6 +14,7 @@ const Routes = () => (
     <Route path="/inbox" exact component={Inbox} />
     <Route path="/sent" exact component={Sent} />
     <Route path="/compose" exact component={Compose} />
+    <Route path="/register" exact component={Register} />
     <Route component={NotFound} />
   </Switch>
 );

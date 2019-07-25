@@ -1,0 +1,16 @@
+.formGroup {
+    margin-bottom: 40px;
+  }
+  .formControl {
+    display: block;
+    width: 100%;
+    padding: 7px;
+    font-size: 1em;
+    font-weight: 400;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0.25em;
+    background-color: #f1f1f1;
+    outline: none;
+  }
+  

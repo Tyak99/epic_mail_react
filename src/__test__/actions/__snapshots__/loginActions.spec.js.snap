@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test async actions creates loginSuccess when login is done 1`] = `
+exports[`test async actions creates authSuccess when login is done 1`] = `
 Array [
   Object {
     "type": "AUTH_START",
@@ -10,56 +10,56 @@ Array [
       "name": "Tunde",
       "token": "secret",
     },
-    "type": "LOGIN_SUCCESS",
+    "type": "AUTH_SUCCESS",
   },
 ]
 `;
 
-exports[`test async actions creates loginSuccess when login is done 2`] = `
+exports[`test async actions creates authSuccess when login is done 2`] = `
 Array [
   Object {
     "type": "AUTH_START",
   },
   Object {
     "error": "invalid password",
-    "type": "LOGIN_FAILED",
+    "type": "AUTH_FAILED",
   },
 ]
 `;
 
 exports[`test async actions should test checkAuth 1`] = `Array []`;
 
-exports[`test authentication actions should call loginFailed when the action is dispatched 1`] = `
+exports[`test authentication actions should call authFailed when the action is dispatched 1`] = `
 Array [
   Object {
     "data": Object {
       "name": "Tunde",
       "token": "token",
     },
-    "type": "LOGIN_SUCCESS",
+    "type": "AUTH_SUCCESS",
   },
   Object {
     "error": Object {
       "error": "sorry",
     },
-    "type": "LOGIN_FAILED",
+    "type": "AUTH_FAILED",
   },
 ]
 `;
 
-exports[`test authentication actions should call loginSuccess when the action is dispatched 1`] = `
+exports[`test authentication actions should call authSuccess when the action is dispatched 1`] = `
 Array [
   Object {
     "data": Object {
       "name": "Tunde",
       "token": "token",
     },
-    "type": "LOGIN_SUCCESS",
+    "type": "AUTH_SUCCESS",
   },
 ]
 `;
 
-exports[`test reducers should update the state when loginFailed is called 1`] = `
+exports[`test reducers should update the state when authFailed is called 1`] = `
 Object {
   "data": Object {},
   "error": Object {

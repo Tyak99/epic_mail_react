@@ -57,11 +57,15 @@ const ComposeForm = ({
   </section>
 );
 
+ComposeForm.defaultProps = {
+  notification: '',
+};
 ComposeForm.propTypes = {
   handleInput: PropTypes.func.isRequired,
   submitHandler: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
   error: PropTypes.string.isRequired,
+  notification: PropTypes.string,
 };
 
 export default ComposeForm;

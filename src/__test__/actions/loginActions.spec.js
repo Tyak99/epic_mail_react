@@ -2,7 +2,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import nock from 'nock';
 import {
-  loginSuccess, loginFailed, login, checkAuth,
+  authSuccess, authFailed, login, checkAuth,
 } from '../../../store/actions/auth';
 import authReducer from '../../../store/reducer/auth';
 
@@ -22,13 +22,13 @@ const initialState = {
 };
 describe('test authentication actions', () => {
   const store = mockStore({});
-  it('should call loginSuccess when the action is dispatched', (done) => {
-    store.dispatch(loginSuccess(mockData));
+  it('should call authSuccess when the action is dispatched', (done) => {
+    store.dispatch(authSuccess(mockData));
     expect(store.getActions()).toMatchSnapshot();
     done();
   });
-  it('should call loginFailed when the action is dispatched', (done) => {
-    store.dispatch(loginFailed({ error: 'sorry' }));
+  it('should call authFailed when the action is dispatched', (done) => {
+    store.dispatch(authFailed({ error: 'sorry' }));
     expect(store.getActions()).toMatchSnapshot();
     done();
   });
@@ -43,7 +43,7 @@ describe('test async actions', () => {
     // clear all HTTP mocks after each test
     nock.cleanAll();
   });
-  it('creates loginSuccess when login is done', (done) => {
+  it('creates authSuccess when login is done', (done) => {
     nock('https://intense-thicket-60071.herokuapp.com/api/v1/auth')
       .post('/login')
       .reply(200, {
@@ -57,7 +57,7 @@ describe('test async actions', () => {
       done();
     });
   });
-  it('creates loginSuccess when login is done', (done) => {
+  it('creates authSuccess when login is done', (done) => {
     nock('https://intense-thicket-60071.herokuapp.com/api/v1/auth')
       .post('/login')
       .reply(404, {
@@ -81,12 +81,12 @@ describe('test reducers', () => {
     done();
   });
   it('should update the state when loginSucces is called', (done) => {
-    const action = loginSuccess(mockData);
+    const action = authSuccess(mockData);
     expect(authReducer(initialState, action)).toMatchSnapshot();
     done();
   });
-  it('should update the state when loginFailed is called', (done) => {
-    const action = loginFailed({ error: 'invalid password' });
+  it('should update the state when authFailed is called', (done) => {
+    const action = authFailed({ error: 'invalid password' });
     expect(authReducer(initialState, action)).toMatchSnapshot();
     done();
   });
