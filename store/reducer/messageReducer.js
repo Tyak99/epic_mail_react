@@ -1,9 +1,11 @@
 import * as actionTypes from '../actionConstants';
 
-const initialState = {
+export const initialState = {
   inbox: [],
   sent: [],
   error: '',
+  isLoading: false,
+  status: '',
 };
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -21,6 +23,25 @@ export default (state = initialState, action) => {
       return {
         ...state,
         sent: action.data,
+      };
+    case actionTypes.SEND_MESSAGE_START:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case actionTypes.SEND_MESSAGE_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        error: '',
+        status: action.message,
+      };
+    case actionTypes.SEND_MESSAGE_FAILED:
+      return {
+        ...state,
+        isLoading: false,
+        status: '',
+        error: action.error,
       };
     default:
       return state;

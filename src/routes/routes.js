@@ -4,6 +4,7 @@ import NotFound from '../components/NotFound/NotFound';
 import Home from '../views/Homepage/Homepage';
 import Sent from '../views/Sent/Sent';
 import Inbox from '../views/Inbox/Inbox';
+import Compose from '../views/Compose/Compose';
 
 const Routes = () => (
 
@@ -11,6 +12,7 @@ const Routes = () => (
     <Route path="/" exact component={Home} />
     <Route path="/inbox" exact component={Inbox} />
     <Route path="/sent" exact component={Sent} />
+    <Route path="/compose" exact component={Compose} />
     <Route component={NotFound} />
   </Switch>
 );
