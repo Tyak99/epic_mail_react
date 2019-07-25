@@ -1,0 +1,48 @@
+.threadGroup {
+    height: 90vh;
+    overflow: scroll;
+    padding: 0 30px;
+  }
+
+
+.threadBody {
+    margin-top: 20px;
+    line-height: 1.7rem;
+  }
+  
+  .from .to {
+      margin-right: 10px
+  }
+  .sender {
+    color: darkorchid;
+    margin-right: 5px;
+  }
+  
+  .receiver {
+    color: firebrick;
+  }
+  
+  .icons a {
+    text-decoration: none;
+  }
+  
+  .icons .reply,
+  .btnDelete {
+    padding: 6px;
+    margin-right: 10px;
+    border: 2px solid #a8c9da;
+    cursor: pointer;
+    color: darkred;
+  }
+  
+  .icons .reply:hover,
+  .btnDelete:hover {
+    background-color: #a8c9da;
+  }
+  
+  hr {
+    height: 10px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px #8c8b8b inset;
+  }
+  

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import styles from './messageList.css';
 
 const MessageList = ({ messages, type }) => {
@@ -7,18 +8,20 @@ const MessageList = ({ messages, type }) => {
   let allMessage;
   if (messages[0]) {
     allMessage = messages.map(message => (
-      <li key={message.id}>
-        {type === 'inbox' ? (
-          <span className={styles.sender}>{message.senderid}</span>
-        ) : (
-          <span className={styles.sender}>
+      <Link to={`/view/${message.id}`}>
+        <li key={message.id}>
+          {type === 'inbox' ? (
+            <span className={styles.sender}>{message.senderid}</span>
+          ) : (
+            <span className={styles.sender}>
             To:
-            {message.receiverid}
-          </span>
-        )}
-        <span className={styles.subject}>{message.subject}</span>
-        <span className={styles.body}>{message.message}</span>
-      </li>
+              {message.receiverid}
+            </span>
+          )}
+          <span className={styles.subject}>{message.subject}</span>
+          <span className={styles.body}>{message.message}</span>
+        </li>
+      </Link>
     ));
   }
 
