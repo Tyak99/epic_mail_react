@@ -5,6 +5,7 @@ Object {
   "error": "",
   "inbox": Array [],
   "isLoading": false,
+  "message": null,
   "sent": Array [],
   "status": "",
 }
@@ -15,6 +16,7 @@ Object {
   "error": undefined,
   "inbox": Array [],
   "isLoading": false,
+  "message": null,
   "sent": Array [],
   "status": "",
 }
@@ -25,6 +27,7 @@ Object {
   "error": "",
   "inbox": Array [],
   "isLoading": true,
+  "message": null,
   "sent": Array [],
   "status": "",
 }
@@ -35,6 +38,7 @@ Object {
   "error": "",
   "inbox": Array [],
   "isLoading": false,
+  "message": null,
   "sent": Array [],
   "status": undefined,
 }

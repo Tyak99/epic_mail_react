@@ -6,6 +6,7 @@ export const initialState = {
   error: '',
   isLoading: false,
   status: '',
+  message: null,
 };
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -42,6 +43,11 @@ export default (state = initialState, action) => {
         isLoading: false,
         status: '',
         error: action.error,
+      };
+    case 'GET_SINGLE_MESSAGE':
+      return {
+        ...state,
+        message: action.message,
       };
     default:
       return state;

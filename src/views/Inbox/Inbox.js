@@ -16,7 +16,7 @@ export class Inbox extends Component {
     return (
       <div>
         <Navigation />
-        <MessageList messages={messages} type="inbox" />
+        <MessageList messages={messages} type="inbox" getMessage={this.getMessage} />
       </div>
     );
   }

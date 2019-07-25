@@ -27,6 +27,11 @@ export const sendMessageStart = () => ({
   type: actionTypes.SEND_MESSAGE_START,
 });
 
+export const getSingleMessageSuccess = message => ({
+  type: 'GET_SINGLE_MESSAGE',
+  message,
+});
+
 export const sendMessageSuccess = () => ({
   type: actionTypes.SEND_MESSAGE_SUCCESS,
   message: 'Sent successfully',
@@ -86,4 +91,18 @@ export const sendMessage = (data) => {
     }
     return dispatch(sendMessageFailed('Invalid email'));
   };
+};
+
+export const getSingleMessage = id => (dispatch) => {
+  axios.get(`${url}/${id}`, {
+    headers: { Authorization: `${localStorage.getItem('token')}` },
+  })
+    .then((res) => {
+      console.log(res.data.data);
+      dispatch(getSingleMessageSuccess(res.data.data));
+    })
+    .catch((error) => {
+      console.log(error.response.data);
+      dispatch(getMessageFailed(error.response.data.error));
+    });
 };
