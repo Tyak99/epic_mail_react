@@ -1,0 +1,15 @@
+  .nav {
+    overflow: hidden;
+    background-color: #3C91E6;
+  }
+  
+  .navBrand {
+    float: left;
+    margin: 12px 21px 13px 12px;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  .nav a:first-child {
+    padding: 0;
+  }

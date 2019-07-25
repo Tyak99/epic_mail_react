@@ -35,7 +35,7 @@ export const sendMessageSuccess = () => ({
 export const getInbox = () => (dispatch) => {
   axios
     .get(url, {
-      headers: { Authorization: token },
+      headers: { Authorization: `${localStorage.getItem('token')}` },
     })
     .then((res) => {
       dispatch(getMessageSuccess(res.data.data));

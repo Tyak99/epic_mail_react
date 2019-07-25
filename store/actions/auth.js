@@ -5,13 +5,13 @@ export const authStart = () => ({
   type: actionTypes.AUTH_START,
 });
 
-export const loginSuccess = data => ({
-  type: actionTypes.LOGIN_SUCCESS,
+export const authSuccess = data => ({
+  type: actionTypes.AUTH_SUCCESS,
   data,
 });
 
-export const loginFailed = error => ({
-  type: actionTypes.LOGIN_FAILED,
+export const authFailed = error => ({
+  type: actionTypes.AUTH_FAILED,
   error,
 });
 export const login = (email, password) => {
@@ -28,18 +28,40 @@ export const login = (email, password) => {
         const { token } = response.data.data;
         localStorage.removeItem('token');
         localStorage.setItem('token', token);
-        dispatch(loginSuccess(response.data.data));
+        dispatch(authSuccess(response.data.data));
       })
       .catch((error) => {
-        dispatch(loginFailed(error.response.data.error));
+        dispatch(authFailed(error.response.data.error));
       });
   };
+};
+
+export const register = authData => (dispatch) => {
+  dispatch(authStart());
+  const regex = /^[a-z0-9][a-z0-9-_]+@([a-z]|[a-z0-9]?[a-z0-9-]+[a-z0-9])\.[a-z0-9]{2,10}(?:\.[a-z]{2,10})?$/;
+  const url = 'https://intense-thicket-60071.herokuapp.com/api/v1/auth/signup';
+  if (authData.password !== authData.confirmPassword) {
+    return dispatch(authFailed('Error! Passwords do not match'));
+  }
+  if (!regex.test(authData.email)) {
+    return dispatch(authFailed('Error! Invalid email address provided'));
+  }
+  return axios.post(url, authData)
+    .then((res) => {
+      const { token } = res.data.data;
+      localStorage.removeItem('token');
+      localStorage.setItem('token', token);
+      dispatch(authSuccess(res.data.data));
+    })
+    .catch((error) => {
+      dispatch(authFailed(error.response.data.error));
+    });
 };
 
 export const checkAuth = () => (dispatch) => {
   const token = localStorage.getItem('token');
   const name = localStorage.getItem('name');
   if (token) {
-    dispatch(loginSuccess(token, name));
+    dispatch(authSuccess(token, name));
   }
 };

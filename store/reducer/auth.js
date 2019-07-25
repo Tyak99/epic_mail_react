@@ -12,16 +12,17 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isLoading: true,
+        error: null,
         token: null,
       };
-    case actionTypes.LOGIN_SUCCESS:
+    case actionTypes.AUTH_SUCCESS:
       return {
         ...state,
         error: null,
         data: action.data,
         isLoading: false,
       };
-    case actionTypes.LOGIN_FAILED:
+    case actionTypes.AUTH_FAILED:
       return {
         ...state,
         data: {},

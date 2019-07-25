@@ -1,6 +1,6 @@
 export const LOGIN = 'Login';
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
-export const LOGIN_FAILED = 'LOGIN_FAILED';
+export const AUTH_SUCCESS = 'AUTH_SUCCESS';
+export const AUTH_FAILED = 'AUTH_FAILED';
 export const AUTH_START = 'AUTH_START';
 export const GET_INBOX = 'GET_INBOX';
 export const GET_INBOX_SUCCESS = 'GET_INBOX';
