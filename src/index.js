@@ -17,6 +17,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import App from './App';
 import store from '../store/index';
+import { checkAuth } from '../store/actions/auth';
 
 library.add(faInbox,
   faAngleDoubleUp,
@@ -25,6 +26,10 @@ library.add(faInbox,
   faPlus,
   faPaperPlane,
   faBars, faReply, faTrashAlt);
+
+if (localStorage.token) {
+  store.dispatch(checkAuth());
+}
 
 render(
   <Provider store={store}>

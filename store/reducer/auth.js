@@ -4,6 +4,7 @@ const initialState = {
   data: {},
   error: null,
   isLoading: false,
+  isAuthenticated: false,
 };
 
 export default (state = initialState, action) => {
@@ -13,12 +14,12 @@ export default (state = initialState, action) => {
         ...state,
         isLoading: true,
         error: null,
-        token: null,
       };
     case actionTypes.AUTH_SUCCESS:
       return {
         ...state,
         error: null,
+        isAuthenticated: true,
         data: action.data,
         isLoading: false,
       };
@@ -28,6 +29,12 @@ export default (state = initialState, action) => {
         data: {},
         error: action.error,
         isLoading: false,
+      };
+    case 'LOGOUT':
+      return {
+        ...state,
+        isAuthenticated: false,
+        data: {},
       };
     default:
       return state;

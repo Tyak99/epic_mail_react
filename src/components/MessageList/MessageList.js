@@ -8,8 +8,8 @@ const MessageList = ({ messages, type }) => {
   let allMessage;
   if (messages[0]) {
     allMessage = messages.map(message => (
-      <Link to={`/view/${message.id}`}>
-        <li key={message.id}>
+      <Link to={`/view/${message.id}`} key={message.id}>
+        <li>
           {type === 'inbox' ? (
             <span className={styles.sender}>{message.senderid}</span>
           ) : (

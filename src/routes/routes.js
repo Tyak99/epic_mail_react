@@ -7,16 +7,18 @@ import Inbox from '../views/Inbox/Inbox';
 import Compose from '../views/Compose/Compose';
 import Register from '../views/Register/Register';
 import SingleMessage from '../components/SingleMessage/SingleMessage';
+import PrivateRoutes from '../components/PrivateRoutes/PrivateRoutes';
+import PublicRoutes from '../components/PublicRoutes/PublicRoutes';
 
 const Routes = () => (
 
   <Switch>
-    <Route path="/" exact component={Home} />
-    <Route path="/inbox" exact component={Inbox} />
-    <Route path="/sent" exact component={Sent} />
-    <Route path="/compose" exact component={Compose} />
-    <Route path="/register" exact component={Register} />
-    <Route path="/view/:id" component={SingleMessage} />
+    <PublicRoutes path="/" exact component={Home} />
+    <PublicRoutes path="/register" component={Register} />
+    <PrivateRoutes path="/inbox" component={Inbox} />
+    <PrivateRoutes path="/sent" component={Sent} />
+    <PrivateRoutes path="/compose" exact component={Compose} />
+    <PrivateRoutes path="/view/:id" component={SingleMessage} />
     <Route component={NotFound} />
   </Switch>
 );

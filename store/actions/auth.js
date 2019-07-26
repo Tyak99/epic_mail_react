@@ -65,3 +65,10 @@ export const checkAuth = () => (dispatch) => {
     dispatch(authSuccess(token, name));
   }
 };
+
+export const logoutUser = () => {
+  localStorage.removeItem('token');
+  return {
+    type: 'LOGOUT',
+  };
+};

@@ -19,6 +19,7 @@ const initialState = {
   data: {},
   error: null,
   isLoading: false,
+  isAuthenticated: false,
 };
 describe('test authentication actions', () => {
   const store = mockStore({});
