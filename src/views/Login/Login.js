@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import LoginUi from '../../components/LoginUi/LoginUi';
 import * as actionCreators from '../../../store/actions/auth';
-import style from './login.css';
 
 export class Login extends Component {
   constructor(props) {
@@ -35,7 +34,7 @@ export class Login extends Component {
     }
     const { isLoading, error } = this.props;
     return (
-      <div className={style.section2}>
+      <div>
         <LoginUi
           submit={e => this.submitHandler(e)}
           loading={isLoading}

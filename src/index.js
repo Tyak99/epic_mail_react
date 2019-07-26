@@ -3,7 +3,6 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
-
 import {
   faInbox,
   faAngleDoubleUp,
@@ -15,6 +14,7 @@ import {
   faReply,
   faTrashAlt,
 } from '@fortawesome/free-solid-svg-icons';
+import style from './index.css';
 import App from './App';
 import store from '../store/index';
 import { checkAuth } from '../store/actions/auth';
