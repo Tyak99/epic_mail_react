@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header';
 
 const props = {
   toggle: () => {},
+  logout: () => {},
 };
 
 describe('component: Header', () => {

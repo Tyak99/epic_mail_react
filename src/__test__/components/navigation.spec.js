@@ -1,9 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
-import Navigation from '../../components/Navigation/Navigation';
+import { Navigation } from '../../components/Navigation/Navigation';
 
 
+const props = {
+  logout: () => {},
+};
 describe('component: Navigation', () => {
   beforeEach(() => {
     sinon.spy(Navigation.prototype, 'toggle');
@@ -12,11 +15,11 @@ describe('component: Navigation', () => {
     Navigation.prototype.toggle.restore();
   });
   it('should render correctly', (done) => {
-    shallow(<Navigation />);
+    shallow(<Navigation {...props} />);
     done();
   });
   it('should test the toggle method', (done) => {
-    const wrapper = shallow(<Navigation />);
+    const wrapper = shallow(<Navigation {...props} />);
     expect(wrapper.state().isOpen).toEqual(false);
     const button = wrapper.find('Header').shallow().find('#icon').first();
     expect(button.length).toBe(1);

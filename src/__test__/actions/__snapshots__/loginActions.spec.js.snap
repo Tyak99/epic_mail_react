@@ -65,6 +65,7 @@ Object {
   "error": Object {
     "error": "invalid password",
   },
+  "isAuthenticated": false,
   "isLoading": false,
 }
 `;
@@ -76,6 +77,7 @@ Object {
     "token": "token",
   },
   "error": null,
+  "isAuthenticated": true,
   "isLoading": false,
 }
 `;

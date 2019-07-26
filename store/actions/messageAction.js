@@ -1,7 +1,6 @@
 import axios from 'axios';
 import * as actionTypes from '../actionConstants';
 
-const token = localStorage.getItem('token');
 const url = 'https://intense-thicket-60071.herokuapp.com/api/v1/messages';
 export const getMessageSuccess = data => ({
   type: actionTypes.GET_INBOX_SUCCESS,
@@ -55,7 +54,7 @@ export const getSentMessages = () => {
   return (dispatch) => {
     axios
       .get(sentUrl, {
-        headers: { Authorization: token },
+        headers: { Authorization: `${localStorage.getItem('token')}` },
       })
       .then((res) => {
         dispatch(getSentMessageSuccess(res.data.data));
@@ -75,7 +74,7 @@ export const sendMessage = (data) => {
   const checkEmail = validateEmail(data.emailTo);
   const config = {
     headers: {
-      Authorization: token,
+      Authorization: `${localStorage.getItem('token')}`,
     },
   };
   return (dispatch) => {
@@ -98,11 +97,9 @@ export const getSingleMessage = id => (dispatch) => {
     headers: { Authorization: `${localStorage.getItem('token')}` },
   })
     .then((res) => {
-      console.log(res.data.data);
       dispatch(getSingleMessageSuccess(res.data.data));
     })
     .catch((error) => {
-      console.log(error.response.data);
       dispatch(getMessageFailed(error.response.data.error));
     });
 };
