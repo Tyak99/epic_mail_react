@@ -10,7 +10,7 @@ const SidebarLink = ({
   <Fragment>
     <Link to={link}>
       <li className={isActive ? styles.active : ''}>
-        <FontAwesomeIcon icon={icon} style={{ paddingRight: '10px' }} />
+        <FontAwesomeIcon icon={icon} style={{ paddingRight: '10px', fontSize: '20px' }} />
         {name}
       </li>
     </Link>

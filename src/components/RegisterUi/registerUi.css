@@ -19,8 +19,8 @@
   .formSection {
     width: 520px;
   }
-  form {
-    max-width: 290px;
+  .formSection form {
+    max-width: 323px;
     padding: 30px;
     margin: 10% auto;
   }

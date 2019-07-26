@@ -1,7 +1,4 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Ubuntu', sans-serif;
+.container {
     background: #00b4db; 
     background: -webkit-linear-gradient(
       to right,
@@ -13,17 +10,15 @@ body {
       #0083b0,
       #00b4db
     ); 
-  }
-  
-  .container {
-    width: 90%;
-    margin: 0 auto;
+    height: 100vh;
+
   }
   
   .header {
     font-size: 72px;
     text-align: center;
     color: black;
+    margin-top: 0;
   }
   .header svg {
       margin-left: 12px;
@@ -33,12 +28,14 @@ body {
     color: #efe8e8;
   }
   .section {
-    float: left;
-    width: 50%;
+    display: flex;
+  }
+  .section .col {
+    flex: 50%;
+    max-width: 50%;
   }
   .section3 {
     width: 80%;
-    float: left;
   }
   .section3 p {
     font-size: large;
