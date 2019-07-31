@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as actionTypes from '../actionConstants';
 
+const url = 'https://intense-thicket-60071.herokuapp.com/api/v1/auth';
 export const authStart = () => ({
   type: actionTypes.AUTH_START,
 });
@@ -15,7 +16,6 @@ export const authFailed = error => ({
   error,
 });
 export const login = (email, password) => {
-  const url = 'https://intense-thicket-60071.herokuapp.com/api/v1/auth/login';
   const authData = {
     email,
     password,
@@ -23,7 +23,7 @@ export const login = (email, password) => {
   return (dispatch) => {
     dispatch(authStart());
     return axios
-      .post(url, authData)
+      .post(`${url}/login`, authData)
       .then((response) => {
         const { token } = response.data.data;
         localStorage.removeItem('token');
@@ -39,14 +39,13 @@ export const login = (email, password) => {
 export const register = authData => (dispatch) => {
   dispatch(authStart());
   const regex = /^[a-z0-9][a-z0-9-_]+@([a-z]|[a-z0-9]?[a-z0-9-]+[a-z0-9])\.[a-z0-9]{2,10}(?:\.[a-z]{2,10})?$/;
-  const url = 'https://intense-thicket-60071.herokuapp.com/api/v1/auth/signup';
   if (authData.password !== authData.confirmPassword) {
     return dispatch(authFailed('Error! Passwords do not match'));
   }
   if (!regex.test(authData.email)) {
     return dispatch(authFailed('Error! Invalid email address provided'));
   }
-  return axios.post(url, authData)
+  return axios.post(`${url}/signup`, authData)
     .then((res) => {
       const { token } = res.data.data;
       localStorage.removeItem('token');

@@ -49,20 +49,17 @@ export const getInbox = () => (dispatch) => {
     });
 };
 
-export const getSentMessages = () => {
-  const sentUrl = `${url}/sent`;
-  return (dispatch) => {
-    axios
-      .get(sentUrl, {
-        headers: { Authorization: `${localStorage.getItem('token')}` },
-      })
-      .then((res) => {
-        dispatch(getSentMessageSuccess(res.data.data));
-      })
-      .catch((error) => {
-        dispatch(getMessageFailed(error.response.data.error));
-      });
-  };
+export const getSentMessages = () => (dispatch) => {
+  axios
+    .get(`${url}/sent`, {
+      headers: { Authorization: `${localStorage.getItem('token')}` },
+    })
+    .then((res) => {
+      dispatch(getSentMessageSuccess(res.data.data));
+    })
+    .catch((error) => {
+      dispatch(getMessageFailed(error.response.data.error));
+    });
 };
 
 const validateEmail = (data) => {
