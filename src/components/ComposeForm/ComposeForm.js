@@ -48,7 +48,7 @@ const ComposeForm = ({
       <button
         type="button"
         className={cx(styles.btn, styles.send)}
-        onClick={submitHandler}
+        onClick={() => submitHandler()}
         id="btn-send"
       >
         {loading ? 'Sending' : 'Send'}
